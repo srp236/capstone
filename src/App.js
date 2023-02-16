@@ -1,14 +1,15 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import defImg from './Rectangle.png';
 // import './App.css';   
 // import { Button, Card, Image } from 'antd-mobile';
 import { HomeFilled, HomeOutlined, LinkedinFilled, StarFilled, TeamOutlined, CalendarOutlined, FileDoneOutlined } from '@ant-design/icons';
 import { Route, Routes, MemoryRouter as Router, useNavigate, useLocation,BrowserRouter } from 'react-router-dom';
 import { Card, Image, Avatar, Layout } from 'antd';
-import { TabBar } from 'antd-mobile'
+import { TabBar, NavBar } from 'antd-mobile'
 import React from 'react';
 import './home.css';
 import MemberPage from './memberPage';
+import Home from './home';
 
 const { Meta } = Card;
 
@@ -93,7 +94,7 @@ const CardList = () => {
       <Card onClick={()=>navigate2('/memberPage')} className='memberCards'>
         <Meta title={<h2 className='memberName'>{item.name}</h2>}
         avatar={
-          <Avatar className='nameAvatar' style={{border:"5px solid white", boxShadow:"2px 2px 10px grey", fontSize:"50px", fontWeight:"light"}} size={150}><p>{item.initial}</p></Avatar>
+          <Avatar className='nameAvatar' style={{border:"5px solid white", fontSize:"50px", fontWeight:"light"}} size={150}><p>{item.initial}</p></Avatar>
         }
         description={
           <div className='cardDesc'>
@@ -105,6 +106,7 @@ const CardList = () => {
             </ul>
           </div>
         }></Meta>
+        
       </Card>
     ))   
   )
@@ -114,6 +116,9 @@ export default () => {
   return (
     <Router initialEntries={['/profile']}>
       <div className="app">
+        <div className='top'>
+          <Image height={50}  style={{paddingTop:"10px"}} src={logo}></Image>
+        </div>
         <div className="body">
           <Routes>
             <Route exact path='/profile' element={<Profile />}></Route>
@@ -124,6 +129,7 @@ export default () => {
           </Routes>
         </div>
         <div className= 'bottom'>
+          <div className='bottom-gradient'></div>
           <BottomNavBar />
         </div>
       </div>
@@ -131,19 +137,18 @@ export default () => {
   )
 }
 
-function Home() {
-  return <div>Home Page Test</div>
-}
 function Profile() {
   return (
     <>
-    <div className='profileHead'>
+    <div className='homeBody grey-background'>
+    <div className='head'>
       <h1 style={{color:'#5236AB', fontWeight:"lighter", fontSize:"xx-large"}}>Link Up!</h1>
       <h3 style={{fontSize:"large", fontWeight:"500"}}>Select & Connect.</h3>
       <p className='starInfo'> <StarFilled className='star'/> A star indicates a member who has chosen to indicate their interest in mentoring </p>
     </div>
-    <div className='profileBody'>
+    <div className='content'>
       <CardList/>
+    </div>
     </div>
   </>
   )
