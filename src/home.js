@@ -40,7 +40,7 @@ const CardList = () => {
     return (
       info.map(item => (
         <Row align="middle" justify="space-between">
-        <Card className='taskCard' headStyle={{background:item.color, color:'white', fontSize:'large',}} title={item.heading}>
+        <Card className='taskCard' headStyle={{background:item.color, color:'white', fontSize:'large', borderRadius:"0px"}} title={item.heading}>
             <p className='taskTitle' style={{fontWeight:'500', fontSize:'medium'}}>{item.title}</p>
             <p className='taskSubTitle'>{item.subTitle}</p>
             <div className='taskBttn'>
@@ -70,6 +70,7 @@ export default function Home() {
                 <div className='content'>
                     <CardList/>
                 </div>
+                <div className='space'/>
             </div>
         </>
     )
