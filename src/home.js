@@ -1,7 +1,7 @@
 import defImg from './Rectangle.png';
 // import './App.css';   
 import { HomeFilled, HomeOutlined, LinkedinFilled, StarFilled, TeamOutlined, CalendarOutlined, FileDoneOutlined } from '@ant-design/icons';
-import { Card, Image, Avatar, Layout, Button,Row, Col } from 'antd';
+import { Card, Image, Avatar, Layout, Button,Row, Progress } from 'antd';
 import React from 'react';
 import './home.css';
 
@@ -15,8 +15,8 @@ const CardList = () => {
         subTitle:'Documentation & Requirements',
         option1:'Clear',
         option2:'Open',
-        color:'#1AB977',
-        start:'Not Started'
+        start:'Not Started',
+        percent:'0'
         
       },
       {
@@ -25,7 +25,7 @@ const CardList = () => {
         subTitle:'CODEACADEMY COURSE',
         option1:'Clear',
         option2:'Set Reminder',
-        color:'#FFAC25'
+        percent:'66'
       },
       {
         heading:'CGI On Boarding',
@@ -33,14 +33,14 @@ const CardList = () => {
         subTitle:'Due Date 3/2/2023',
         option1:'Clear',
         option2:'Open',
-        color:'#B00020'
+        percent:'0'
       },
     ]
     
     return (
       info.map(item => (
         <Row align="middle" justify="space-between">
-        <Card className='taskCard' headStyle={{background:item.color, color:'white', fontSize:'large', borderRadius:"0px"}} title={item.heading}>
+        <Card className='taskCard' headStyle={{background:'linear-gradient(to right, rgb(230,26,57), rgb(82,54,171))', color:'white', fontSize:'large', borderRadius:"0px"}} title={item.heading}>
             <p className='taskTitle' style={{fontWeight:'500', fontSize:'medium'}}>{item.title}</p>
             <p className='taskSubTitle'>{item.subTitle}</p>
             <div className='taskBttn'>
@@ -50,7 +50,8 @@ const CardList = () => {
         </Card>
         {/* <Avatar className='nameAvatar' style={{border:"5px solid white", boxShadow:"2px 2px 10px grey", fontSize:"50px", fontWeight:"light"}}><p>{item.initial}</p></Avatar> */}
         <div className='progressC'>
-        <Avatar size={60}style={{border:"5px solid rgb(82,54,171)", fontSize:"20px", fontWeight:"light", backgroundColor:'transparent'}}>66%</Avatar>
+          <Progress type="circle" strokeColor='rgb(230,26,57)' width={50} percent={item.percent}/>
+          {/* <div>not started</div> */}
         </div>
         </Row>
       ))   
@@ -60,12 +61,9 @@ const CardList = () => {
 export default function Home() {
     return (
         <>
-            {/* <div className='homeHead'>
-            <h1 style={{color:'white',fontWeight:"lighter", fontSize:"xx-large"}}>Today's Tasks</h1>
-        </div> */}
-            <div className='homeBody purple-background'>
+            <div className='homeBody'>
                 <div className='head'>
-                    <h1 style={{color:'grey', fontWeight:"lighter", fontSize:"xx-large"}}>Today's Tasks</h1>
+                    <h1 style={{color:'rgb(82,54,171)', fontWeight:"lighter", fontSize:"xx-large"}}>Today's Tasks</h1>
                 </div>
                 <div className='content'>
                     <CardList/>

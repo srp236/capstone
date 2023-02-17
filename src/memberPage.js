@@ -48,7 +48,7 @@ const ProfileList2 = () => {
     const { social } = state;
     const info = [
         {
-            title:'BSU',
+            title:'SBU',
             text:'CSG East'
         },
         {
@@ -89,7 +89,7 @@ export default function MemberPage() {
                     <LeftOutlined style={{fontSize:'20px'}} onClick={()=>navigate('/link')}/>
                     <div className='link-section'>
                         <LinkOutlined style={{fontSize:'25px'}}/>
-                        <div style={{fontWeight:'100', fontSize:'15px'}}>LINKS</div>
+                        <div style={{fontWeight:'100', fontSize:'15px'}}>BUDDIES</div>
                         <h4 style={{textDecorationLine:'underline', fontWeight:'100'}}>{links}</h4>
                     </div>
                 </div>
@@ -97,6 +97,7 @@ export default function MemberPage() {
             </div>
             <div className='userName'>
                 <h1 style={{color:'black', fontWeight:"lighter", fontSize:"x-large", paddingBottom:'10px'}}>{name}</h1>
+                <Button className='connect-button'><MessageOutlined />Connect Now</Button>
                 <Button className='connect-button'><MessageOutlined />Connect Now</Button>
             </div>
             <Row className='rows'>
