@@ -17,7 +17,8 @@ const CardList = () => {
         role:'Business Analyst',
         office:'New Brunswick, NJ',
         links:'220',
-        social:''
+        social:'',
+        color:'rgb(230,26,57)'
       },
       {
         name:'Harris Wadley',
@@ -27,7 +28,8 @@ const CardList = () => {
         role:'Data Engineer',
         office:'New Brunswick, NJ',
         links:'378',
-        social:''
+        social:'',
+        color:'grey'
       },
       {
         name:'Alex Lavasani',
@@ -37,7 +39,8 @@ const CardList = () => {
         role:'Data Engineeer',
         office:'New Brunswick, NJ',
         links:'120',
-        social:''
+        social:'',
+        color:'rgb(230,26,57)'
       },
       {
         name:'Sheyeanne Powell',
@@ -47,7 +50,8 @@ const CardList = () => {
         role:'Software Developer',
         office:'New Brunswick, NJ',
         links:'135',
-        social:'https://www.linkedin.com/in/sheyeanne-powell-079598237/'
+        social:'https://www.linkedin.com/in/sheyeanne-powell-079598237/',
+        color:'grey'
       },
       {
         name:'Aasish Munusamny',
@@ -57,7 +61,8 @@ const CardList = () => {
         role:'Business Analyst',
         office:'New Brunswick, NJ',
         links:'248',
-        social:''
+        social:'',
+        color:'grey'
       }
     ]
   
@@ -66,7 +71,7 @@ const CardList = () => {
     return (
       info.map(item => (
         <Card onClick={()=>navigate('/memberPage', {state:{name:item.name,nameIL:item.nameIL, role: item.role, office: item.office, interests:item.interests, links:item.links, social:item.social}})} className='memberCards'>
-          <Meta title={<h2 className='memberName'>{item.name}</h2>}
+          <Meta title={<><h2 className='memberName'>{item.name}</h2>{}<StarFilled style={{position:'absolute',right:'10px', top:'10px', color:item.color}}></StarFilled></>}
           avatar={
             <Avatar className='nameAvatar' style={{border:"5px solid white", fontSize:"50px", fontWeight:"light"}} size={150}><p>{item.nameIL}</p></Avatar>
           }
