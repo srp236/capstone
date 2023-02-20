@@ -70,7 +70,7 @@ const CardList = () => {
   
     return (
       info.map(item => (
-        <Card onClick={()=>navigate('/memberPage', {state:{name:item.name,nameIL:item.nameIL, role: item.role, office: item.office, interests:item.interests, links:item.links, social:item.social}})} className='memberCards'>
+        <Card onClick={()=>navigate('/memberPage', {state:{member: item, role: item.role}})} className='memberCards'>
           <Meta title={<><h2 className='memberName'>{item.name}</h2>{}<StarFilled style={{position:'absolute',right:'10px', top:'10px', color:item.color}}></StarFilled></>}
           avatar={
             <Avatar className='nameAvatar' style={{border:"5px solid white", fontSize:"50px", fontWeight:"light"}} size={150}><p>{item.nameIL}</p></Avatar>
@@ -99,8 +99,8 @@ export default function Link() {
         <LeftOutlined style={{fontSize:'20px', padding:'10px 15px'}} onClick={()=>navigate('/profile')}/>
         <div className='head' style={{marginTop:'0px'}}>
           <h1 style={{color:'#5236AB', fontWeight:"lighter", fontSize:"xx-large"}}>Link Up!</h1>
-          <h3 style={{fontSize:"large", fontWeight:"500"}}>Select & Connect.</h3>
-          <p className='starInfo'> <StarFilled className='star'/> A star indicates a member who has chosen to indicate their interest in mentoring </p>
+          <h3 style={{fontSize:"large", fontWeight:"500", paddingBottom:'20px'}}>Select & Connect.</h3>
+          {/* <p className='starInfo'> <StarFilled className='star'/> A star indicates a member who has chosen to indicate their interest in mentoring </p> */}
         </div>
         <div className='content'>
           <CardList/>

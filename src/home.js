@@ -15,7 +15,7 @@ const CardList = () => {
         subTitle:'Documentation & Requirements',
         option1:'Clear',
         option2:'Open',
-        start:'Not Started',
+        stat:'Not Started',
         percent:'0'
         
       },
@@ -25,6 +25,7 @@ const CardList = () => {
         subTitle:'CODEACADEMY COURSE',
         option1:'Clear',
         option2:'Set Reminder',
+        stat:'Started',
         percent:'66'
       },
       {
@@ -33,6 +34,7 @@ const CardList = () => {
         subTitle:'Due Date 3/2/2023',
         option1:'Clear',
         option2:'Open',
+        stat:'Not Started',
         percent:'0'
       },
     ]
@@ -50,8 +52,8 @@ const CardList = () => {
         </Card>
         {/* <Avatar className='nameAvatar' style={{border:"5px solid white", boxShadow:"2px 2px 10px grey", fontSize:"50px", fontWeight:"light"}}><p>{item.initial}</p></Avatar> */}
         <div className='progressC'>
-          <Progress type="circle" strokeColor='rgb(230,26,57)' width={50} percent={item.percent}/>
-          {/* <div>not started</div> */}
+          <Progress  style={{paddingBottom:'10px'}} type="circle" strokeWidth={10} strokeColor='rgb(230,26,57)' width={70} percent={item.percent}/>
+          <div>{item.stat}</div>
         </div>
         </Row>
       ))   

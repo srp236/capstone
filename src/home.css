@@ -122,13 +122,15 @@
 .progressC {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
+  text-align: center;
   width: 20%;
 }
 
 .taskBttn {
   display: flex;
   flex-direction:row;
+  right: 40px;
   margin-top: 10%;
   position:absolute;
   bottom:10px;
@@ -158,6 +160,7 @@
 
 .opt1 {
   background-color: transparent;
+  box-shadow: none;
   border: none;  
   color: grey;
 }
@@ -239,6 +242,10 @@ h3 {
   /* background-color: #eee; */
 }
 
+.gradient-background {
+  background: linear-gradient(to right, rgb(230,26,57), rgb(82,54,171));
+}
+
 .taskCard .ant-card-body {
   margin: 0px;
 }
@@ -274,4 +281,51 @@ h3 {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+}
+
+.events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.cal thead {
+  background: linear-gradient(to right, rgb(230,26,57), rgb(82,54,171));
+}
+
+.ant-picker-calendar .ant-picker-content th {
+  color: white;
+}
+
+/* .cal .ant-picker-body {
+  height: 300px;
+} */
+
+.cal {
+  height: 700px;
+  overflow:hidden;
+}
+
+.buddy {
+  padding-top: 20%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  font-weight: 100;
+}
+
+.buddyBttn {
+  display: flex;
+  width: 300px;
+  flex-direction:row;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  bottom: 10%;
+  position:absolute;
+}
+
+.buddyBttn .ant-btn {
+  border-radius: 20px;
 }

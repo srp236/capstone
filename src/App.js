@@ -1,14 +1,15 @@
 import logo from './logo.png';
-import { HomeFilled, HomeOutlined, LinkedinFilled, StarFilled, TeamOutlined, CalendarOutlined, FileDoneOutlined } from '@ant-design/icons';
-import { Route, Routes, MemoryRouter as Router, useNavigate, useLocation,BrowserRouter } from 'react-router-dom';
-import { Card, Image, Avatar, Layout } from 'antd';
-import { TabBar, NavBar } from 'antd-mobile'
-import React from 'react';
+import { HomeOutlined, LoadingOutlined, TeamOutlined, CalendarOutlined, FileDoneOutlined, MessageOutlined } from '@ant-design/icons';
+import { Route, Routes, MemoryRouter as Router, useNavigate, useLocation } from 'react-router-dom';
+import { Image, Calendar, Badge, Spin, Result, Avatar, Button } from 'antd';
+import { TabBar } from 'antd-mobile'
+import React, { useEffect, useState } from 'react';
 import './home.css';
 import MemberPage from './memberPage';
 import Home from './home';
 import Profile from './profile';
 import Link from './link';
+import rachel from './rachel.png'
 
 const BottomNavBar = () => {
   const navigate = useNavigate();
@@ -56,15 +57,15 @@ const BottomNavBar = () => {
 
 export default () => {
   return (
-    <Router initialEntries={['/profile']}>
+    <Router initialEntries={['/home']}>
       <div className="app">
         <div className='top'>
           <Image height={50}  style={{paddingTop:"10px"}} src={logo}></Image>
         </div>
         <div className="body">
           <Routes>
-            <Route exact path='/home' element={<Home />}></Route>
-            <Route exact path='/chat' element={<Chat />}></Route>
+            <Route exact path='/home' element={<Chat />}></Route>
+            <Route exact path='/chat' element={<Home />}></Route>
             <Route exact path='/calender' element={<Calender/>}></Route>
             <Route exact path='/profile' element={<Profile />}></Route>
             <Route exact path='/link' element={<Link/>}></Route>
@@ -81,8 +82,86 @@ export default () => {
 }
 
 function Chat() {
-  return <div>Tasks Page Test</div>
+  const navigate = useNavigate();
+  const info =
+    {
+      name:'Rachel Smith',
+      email:'linkedin.com/smith',
+      img:rachel,
+      interests:['Travel','Food'],
+      nameIL:'RS',
+      role:'Business Analyst',
+      office:'Pittsburgh, PA',
+      links:'276',
+      social:'',
+      color:'rgb(230,26,57)'
+    }
+
+  const FindBuddy = () => {
+    if(!loading) {
+      return <div className='buddy'>
+        <p style={{fontStyle:'italic', fontSize:'40px'}}>Buddy Up!</p>
+        <p style={{fontSize:'17px'}}>Your New Member Buddy is:</p>
+        <Avatar src={rachel} style={{border:"5px solid white", fontSize:"50px", fontWeight:"light"}} size={180}></Avatar>
+        <p style={{fontSize:'25px'}}>Rachel Smith</p>
+        <p style={{fontSize:'15px'}}>Software developer @ Pittsburg, PA</p>
+        <div className='buddyBttn'> 
+          <Button onClick={()=>navigate('/memberPage', {state:{member: info}})}>Open Profile <TeamOutlined/></Button>
+          <Button>Open Chat <MessageOutlined/></Button>
+        </div>
+      </div>
+    }
+  }
+  const antIcon = (<LoadingOutlined style={{fontSize: 80, color:'white'}}spin/>)
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 7000);
+    return () => clearTimeout(timer);
+  })
+  
+  return <div className='gradient-background buddy'>
+    {/* <div>Tasks Page Test</div> */}
+    <Spin indicator={antIcon} style={{position:'absolute', botttom:'10px',color:'white', fontSize:'30px', fontWeight:'400', display:'flex', flexDirection:'column-reverse', alignItems:'center'}} tip='Finding Your Buddy...' spinning={loading} />
+    <FindBuddy></FindBuddy>
+    <div className='' style={{height:'300px'}}></div>
+    {/* <Home/> */}
+
+  
+  </div>
+}
+
+const getListData = (value) => {
+  let listData;
+  switch (value.date()){
+    case 8:
+      listData = [
+        {
+          type : 'success',
+          content:'This is a success event',
+        },
+      ];
+      break;
+    default:
+  }
+  return listData || [];
+
+}
+
+const dateCellRender = (value) => {
+  const listData = getListData(value);
+  return (
+    <ul className='events'>
+      {listData.map((item) =>
+      <li key={item.content}>
+        <Badge status={item.type}/>
+      </li>)}
+    </ul>
+  )
 }
 function Calender() {
-  return <div>Calender Page Test</div>
+  return <div className='cal'>
+    <Calendar className='call'
+    // fullscreen={false}
+    ></Calendar>
+  </div>
 }

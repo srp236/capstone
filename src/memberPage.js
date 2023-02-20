@@ -6,16 +6,16 @@ import './home.css';
 
 const ProfileList1 = () => {
     const {state} = useLocation();
-    const { role, office, interests } = state;
+    const { member } = state;
 
     const info = [
         {
             title:'Role',
-            text:role
+            text:member.role
         },
         {
             title:'Office',
-            text:office
+            text:member.office
         },
         {
             title:'New Member Buddy',
@@ -31,7 +31,7 @@ const ProfileList1 = () => {
         },
         {
             title:'Hobbies & Interests',
-            text:<><p>{interests[0]}<br/>{interests[1]}</p></>
+            text:<><p>{member.interests[0]}<br/>{member.interests[1]}</p></>
         },
     ]
     return (
@@ -45,7 +45,7 @@ const ProfileList1 = () => {
 }
 const ProfileList2 = () => {
     const {state} = useLocation();
-    const { social } = state;
+    const { member } = state;
     const info = [
         {
             title:'SBU',
@@ -56,7 +56,7 @@ const ProfileList2 = () => {
             text:'Margaret Piliere'
         },
         {
-            title:<a style={{color:'rgb(82,54,171)', fontSize:'18px', fontWeight:'400',textDecorationLine:'underline'}} href={social}>Linkedin Profile</a>,
+            title:<a style={{color:'rgb(82,54,171)', fontSize:'18px', fontWeight:'400',textDecorationLine:'underline'}} href={member.social}>Linkedin Profile</a>,
             text:<><br/></>
         },
         {
@@ -81,7 +81,7 @@ const ProfileList2 = () => {
 export default function MemberPage() {
     const navigate = useNavigate();
     const {state} = useLocation();
-    const { name, nameIL, links } = state;
+    const { member } = state;
     return (
         <div>
             <div className='profile-header'>
@@ -90,13 +90,13 @@ export default function MemberPage() {
                     <div className='link-section'>
                         <LinkOutlined style={{fontSize:'25px'}}/>
                         <div style={{fontWeight:'100', fontSize:'15px'}}>BUDDIES</div>
-                        <h4 style={{textDecorationLine:'underline', fontWeight:'100'}}>{links}</h4>
+                        <h4 style={{textDecorationLine:'underline', fontWeight:'100'}}>{member.links}</h4>
                     </div>
                 </div>
-                <Avatar className='profile-img nameAvatar' style={{color:'white', border:"5px solid white", fontSize:"50px", fontWeight:"light"}} size={130}>{nameIL}</Avatar>
+                <Avatar className='profile-img nameAvatar' style={{color:'white', border:"5px solid white", fontSize:"50px", fontWeight:"light"}} size={130}>{member.nameIL}</Avatar>
             </div>
             <div className='userName'>
-                <h1 style={{color:'black', fontWeight:"lighter", fontSize:"x-large", paddingBottom:'10px'}}>{name}</h1>
+                <h1 style={{color:'black', fontWeight:"lighter", fontSize:"x-large", paddingBottom:'10px'}}>{member.name}</h1>
                 <Button className='connect-button'><MessageOutlined />Connect Now</Button>
                 <Button className='connect-button'><MessageOutlined />Connect Now</Button>
             </div>
