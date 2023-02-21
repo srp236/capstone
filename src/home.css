@@ -326,6 +326,14 @@ h3 {
   position:absolute;
 }
 
+.memberBttn {
+  display: flex;
+  width: 300px;
+  flex-direction:row;
+  justify-content: space-evenly;
+  border-radius: 20px;
+}
+
 .buddyBttn .ant-btn {
   border-radius: 20px;
 }

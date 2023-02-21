@@ -16,7 +16,7 @@ const ProfileList1 = () => {
         },
         {
             title:'New Member Buddy',
-            text:'Sydney Clark'
+            text:'Rachel Smith'
         },
         {
             title:'Alma Mater',
@@ -43,7 +43,7 @@ const ProfileList1 = () => {
 const ProfileList2 = () => {
     const info = [
         {
-            title:'BSU',
+            title:'SBU',
             text:'CSG East'
         },
         {
@@ -82,7 +82,7 @@ export default function Profile() {
                     <h1>My Profile</h1>
                     <div className='link-section'>
                         <LinkOutlined style={{fontSize:'25px'}}/>
-                        <div style={{fontWeight:'100', fontSize:'15px'}} onClick={()=>navigate('/link')}>LINKS</div>
+                        <div style={{fontWeight:'100', fontSize:'15px'}} onClick={()=>navigate('/link')}>BUDDIES</div>
                         <h4 style={{textDecorationLine:'underline', fontWeight:'100'}}>0</h4>
                     </div>
                 </div>

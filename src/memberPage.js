@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { LinkOutlined, MessageOutlined, LeftOutlined } from '@ant-design/icons';
 import { Avatar, Row,Col, Button } from 'antd';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './home.css';
 
 const ProfileList1 = () => {
@@ -82,6 +82,11 @@ export default function MemberPage() {
     const navigate = useNavigate();
     const {state} = useLocation();
     const { member } = state;
+    const [bttn, setbttn] = useState(<><LinkOutlined/>Add Buddy</>);
+    const [clr, setclr] = useState('rgb(82,54,171)');
+
+    let colorr;
+
     return (
         <div>
             <div className='profile-header'>
@@ -97,8 +102,14 @@ export default function MemberPage() {
             </div>
             <div className='userName'>
                 <h1 style={{color:'black', fontWeight:"lighter", fontSize:"x-large", paddingBottom:'10px'}}>{member.name}</h1>
-                <Button className='connect-button'><MessageOutlined />Connect Now</Button>
-                <Button className='connect-button'><MessageOutlined />Connect Now</Button>
+                <div className='memberBttn'>
+                    <Button className='connect-button'><MessageOutlined />Connect Now</Button>
+                    <Button value='Add Buddy' onClick={()=> {
+                        setbttn(<div style={{fontStyle:'italic'}}>Request Sent</div>)
+                        setclr('rgb(96, 92, 110)')
+                    }}
+                    style={{backgroundColor:clr}} className='connect-button'>{bttn}</Button>
+                </div>
             </div>
             <Row className='rows'>
                 <Col span={12}>

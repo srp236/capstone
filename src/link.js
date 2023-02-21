@@ -17,7 +17,7 @@ const CardList = () => {
         role:'Business Analyst',
         office:'New Brunswick, NJ',
         links:'220',
-        social:'',
+        social:'https://www.linkedin.com/in/tatianasalermo',
         color:'rgb(230,26,57)'
       },
       {
@@ -28,7 +28,7 @@ const CardList = () => {
         role:'Data Engineer',
         office:'New Brunswick, NJ',
         links:'378',
-        social:'',
+        social:'http://linkedin.com/in/harris-wadley',
         color:'grey'
       },
       {
@@ -39,7 +39,7 @@ const CardList = () => {
         role:'Data Engineeer',
         office:'New Brunswick, NJ',
         links:'120',
-        social:'',
+        social:'https://www.linkedin.com/in/alex-lavasani/',
         color:'rgb(230,26,57)'
       },
       {

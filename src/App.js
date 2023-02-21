@@ -57,15 +57,15 @@ const BottomNavBar = () => {
 
 export default () => {
   return (
-    <Router initialEntries={['/home']}>
+    <Router initialEntries={['/link']}>
       <div className="app">
         <div className='top'>
           <Image height={50}  style={{paddingTop:"10px"}} src={logo}></Image>
         </div>
         <div className="body">
           <Routes>
-            <Route exact path='/home' element={<Chat />}></Route>
-            <Route exact path='/chat' element={<Home />}></Route>
+            <Route exact path='/chat' element={<Chat />}></Route>
+            <Route exact path='/home' element={<Home />}></Route>
             <Route exact path='/calender' element={<Calender/>}></Route>
             <Route exact path='/profile' element={<Profile />}></Route>
             <Route exact path='/link' element={<Link/>}></Route>
@@ -94,7 +94,8 @@ function Chat() {
       office:'Pittsburgh, PA',
       links:'276',
       social:'',
-      color:'rgb(230,26,57)'
+      color:'rgb(230,26,57)',
+      nmb:'Katie Parker'
     }
 
   const FindBuddy = () => {
@@ -104,7 +105,7 @@ function Chat() {
         <p style={{fontSize:'17px'}}>Your New Member Buddy is:</p>
         <Avatar src={rachel} style={{border:"5px solid white", fontSize:"50px", fontWeight:"light"}} size={180}></Avatar>
         <p style={{fontSize:'25px'}}>Rachel Smith</p>
-        <p style={{fontSize:'15px'}}>Software developer @ Pittsburg, PA</p>
+        <p style={{fontSize:'15px'}}>Software Developer @ Pittsburg, PA</p>
         <div className='buddyBttn'> 
           <Button onClick={()=>navigate('/memberPage', {state:{member: info}})}>Open Profile <TeamOutlined/></Button>
           <Button>Open Chat <MessageOutlined/></Button>
@@ -119,49 +120,20 @@ function Chat() {
     return () => clearTimeout(timer);
   })
   
-  return <div className='gradient-background buddy'>
+  return <div className='buddy' style={{justifyContent:'center', height:'700px'}}>
+  {/* return <div className='gradient-background buddy' style={{justifyContent:'center', height:'700px'}}> */}
     {/* <div>Tasks Page Test</div> */}
-    <Spin indicator={antIcon} style={{position:'absolute', botttom:'10px',color:'white', fontSize:'30px', fontWeight:'400', display:'flex', flexDirection:'column-reverse', alignItems:'center'}} tip='Finding Your Buddy...' spinning={loading} />
+    {/* <Spin indicator={antIcon} style={{position:'absolute', botttom:'10px',color:'white', fontSize:'30px', fontWeight:'400', display:'flex', flexDirection:'column-reverse', alignItems:'center'}} tip='Finding Your Buddy...' spinning={loading} />
     <FindBuddy></FindBuddy>
-    <div className='' style={{height:'300px'}}></div>
+    <div className='' style={{height:'300px'}}></div> */}
     {/* <Home/> */}
 
-  
   </div>
 }
 
-const getListData = (value) => {
-  let listData;
-  switch (value.date()){
-    case 8:
-      listData = [
-        {
-          type : 'success',
-          content:'This is a success event',
-        },
-      ];
-      break;
-    default:
-  }
-  return listData || [];
-
-}
-
-const dateCellRender = (value) => {
-  const listData = getListData(value);
-  return (
-    <ul className='events'>
-      {listData.map((item) =>
-      <li key={item.content}>
-        <Badge status={item.type}/>
-      </li>)}
-    </ul>
-  )
-}
 function Calender() {
   return <div className='cal'>
     <Calendar className='call'
-    // fullscreen={false}
     ></Calendar>
   </div>
 }

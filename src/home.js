@@ -1,11 +1,6 @@
-import defImg from './Rectangle.png';
-// import './App.css';   
-import { HomeFilled, HomeOutlined, LinkedinFilled, StarFilled, TeamOutlined, CalendarOutlined, FileDoneOutlined } from '@ant-design/icons';
-import { Card, Image, Avatar, Layout, Button,Row, Progress } from 'antd';
+import { Card, Button,Row, Progress } from 'antd';
 import React from 'react';
 import './home.css';
-
-const { Meta } = Card;
 
 const CardList = () => {
     const info = [
