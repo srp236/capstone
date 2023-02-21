@@ -84,7 +84,7 @@ export default function Profile() {
                     <Button className='prof' style={{width:'200px',textAlign:'left', backgroundColor:'white',color:'rgb(82,54,171)'}}>My Profile</Button>
                     <div className='link-section'>
                         <LinkOutlined style={{fontSize:'25px'}}/>
-                        <div style={{fontWeight:'100', fontSize:'15px'}} onClick={()=>navigate('/link')}>BUDDIES</div>
+                        <div style={{fontWeight:'100', fontSize:'15px'}} onClick={()=>navigate('/link')}>CONNECTIONS</div>
                         <h4 style={{textDecorationLine:'underline', fontWeight:'100'}}>0</h4>
                     </div>
                 </div>

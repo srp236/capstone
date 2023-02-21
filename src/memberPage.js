@@ -92,7 +92,7 @@ export default function MemberPage() {
                     <LeftOutlined style={{fontSize:'20px'}} onClick={()=>navigate('/link')}/>
                     <div className='link-section'>
                         <LinkOutlined style={{fontSize:'25px'}}/>
-                        <div style={{fontWeight:'100', fontSize:'15px'}}>BUDDIES</div>
+                        <div style={{fontWeight:'100', fontSize:'15px'}}>CONNECTIONS</div>
                         <h4 style={{textDecorationLine:'underline', fontWeight:'100'}}>{member.links}</h4>
                     </div>
                 </div>
