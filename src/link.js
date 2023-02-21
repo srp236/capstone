@@ -1,4 +1,3 @@
-import defImg from './Rectangle.png';
 import { LinkedinFilled, StarFilled, LeftOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { Card, Avatar } from 'antd';
@@ -100,7 +99,6 @@ export default function Link() {
         <div className='head' style={{marginTop:'0px'}}>
           <h1 style={{color:'#5236AB', fontWeight:"lighter", fontSize:"xx-large"}}>Link Up!</h1>
           <h3 style={{fontSize:"large", fontWeight:"500", paddingBottom:'20px'}}>Select & Connect.</h3>
-          {/* <p className='starInfo'> <StarFilled className='star'/> A star indicates a member who has chosen to indicate their interest in mentoring </p> */}
         </div>
         <div className='content'>
           <CardList/>

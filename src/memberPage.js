@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { LinkOutlined, MessageOutlined, LeftOutlined } from '@ant-design/icons';
 import { Avatar, Row,Col, Button } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './home.css';
 
 const ProfileList1 = () => {
@@ -84,8 +84,6 @@ export default function MemberPage() {
     const { member } = state;
     const [bttn, setbttn] = useState(<><LinkOutlined/>Add Buddy</>);
     const [clr, setclr] = useState('rgb(82,54,171)');
-
-    let colorr;
 
     return (
         <div>
