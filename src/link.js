@@ -95,9 +95,9 @@ export default function Link() {
     return (
         <>
         <div className='homeBody grey-background'>
-        <LeftOutlined style={{fontSize:'20px', padding:'10px 15px'}} onClick={()=>navigate('/profile')}/>
+        <LeftOutlined className='back-bttn' style={{fontSize:'20px', padding:'10px 15px'}} onClick={()=>navigate('/profile')}/>
         <div className='head' style={{marginTop:'0px'}}>
-          <h1 style={{color:'#5236AB', fontWeight:"lighter", fontSize:"xx-large"}}>Link Up!</h1>
+          <h1 style={{color:'#5236AB', fontWeight:"lighter", fontSize:"xx-large", marginTop:'20px'}}>Link Up!</h1>
           <h3 style={{fontSize:"large", fontWeight:"500", paddingBottom:'20px'}}>Select & Connect.</h3>
         </div>
         <div className='content'>

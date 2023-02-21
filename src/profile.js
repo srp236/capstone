@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import {LinkOutlined} from '@ant-design/icons';
-import { Avatar, Row,Col } from 'antd';
+import { Avatar, Row,Col, Button } from 'antd';
 import React from 'react';
 import './home.css';
+import katie from './katie.png';
 
 const ProfileList1 = () => {
     const info = [
@@ -79,17 +80,18 @@ export default function Profile() {
         <div>
             <div className='profile-header'>
                 <div className='profile-head-text'>
-                    <h1>My Profile</h1>
+                    <div></div>
+                    <Button className='prof' style={{width:'200px',textAlign:'left', backgroundColor:'white',color:'rgb(82,54,171)'}}>My Profile</Button>
                     <div className='link-section'>
                         <LinkOutlined style={{fontSize:'25px'}}/>
                         <div style={{fontWeight:'100', fontSize:'15px'}} onClick={()=>navigate('/link')}>BUDDIES</div>
                         <h4 style={{textDecorationLine:'underline', fontWeight:'100'}}>0</h4>
                     </div>
                 </div>
-                <Avatar className='profile-img' style={{color:'black'}} size={130}>Upload Photo</Avatar>
+                <Avatar className='profile-img' style={{color:'black', border:'0px',}} size={140} src={katie}></Avatar>
             </div>
             <div className='userName'>
-                <h1 style={{color:'black', fontWeight:"lighter", fontSize:"x-large"}}>Katie Parker</h1>
+                <h1 style={{color:'black', fontWeight:"lighter", fontSize:"30px"}}>Katie Parker</h1>
             </div>
             <Row className='rows'>
                 <Col span={12}>
