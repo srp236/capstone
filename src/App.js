@@ -1,7 +1,7 @@
 import logo from './logo.png';
 import { HomeOutlined, LoadingOutlined, TeamOutlined, CalendarOutlined, FileDoneOutlined, MessageOutlined } from '@ant-design/icons';
 import { Route, Routes, MemoryRouter as Router, useNavigate, useLocation } from 'react-router-dom';
-import { Image, Calendar, Badge, Spin, Result, Avatar, Button } from 'antd';
+import { Image, Calendar, Avatar, Button } from 'antd';
 import { TabBar } from 'antd-mobile'
 import React, { useEffect, useState } from 'react';
 import './home.css';

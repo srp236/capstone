@@ -280,13 +280,6 @@ h3 {
   font-weight:bold;
 }
 
-/* .memberInfo {
-  display: flex;
-  flex-direction: column;
-  margin-top: -20px;
-
-} */
-
 .userName {
   display: flex;
   flex-direction: column;
@@ -314,10 +307,6 @@ h3 {
 .ant-picker-calendar .ant-picker-content th {
   color: white;
 }
-
-/* .cal .ant-picker-body {
-  height: 300px;
-} */
 
 .cal {
   height: 700px;

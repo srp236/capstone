@@ -102,7 +102,7 @@ export default function MemberPage() {
                 <h1 style={{color:'black', fontWeight:"lighter", fontSize:"x-large", paddingBottom:'10px'}}>{member.name}</h1>
                 <div className='memberBttn'>
                     <Button className='connect-button'><MessageOutlined />Connect Now</Button>
-                    <Button value='Add Buddy' onClick={()=> {
+                    <Button onClick={()=> {
                         setbttn(<div style={{fontStyle:'italic'}}>Request Sent</div>)
                         setclr('rgb(96, 92, 110)')
                     }}
