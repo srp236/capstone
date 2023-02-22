@@ -252,6 +252,15 @@ h3 {
   /* background-color: #eee; */
 }
 
+.ant-switch.ant-switch-checked .ant-switch-inner {
+  background-color: #5236ab;
+}
+
+.ant-switch {
+  background-color: #cbc3e6;
+}
+
+
 .gradient-background {
   background: linear-gradient(to right, rgb(230,26,57), rgb(82,54,171));
 }

@@ -65,7 +65,7 @@ const ProfileList2 = () => {
         },
         {
             title:'Profile Status',
-            text:<Switch/>
+            text:<Switch />
         },
     ]
     return (
