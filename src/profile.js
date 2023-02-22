@@ -85,7 +85,7 @@ export default function Profile() {
                     <div className='link-section'>
                         <LinkOutlined style={{fontSize:'25px'}}/>
                         <div style={{fontWeight:'100', fontSize:'15px'}} onClick={()=>navigate('/link')}>CONNECTIONS</div>
-                        <h4 style={{textDecorationLine:'underline', fontWeight:'100'}}>0</h4>
+                        <h4 style={{textDecorationLine:'underline', fontWeight:'100'}}>1</h4>
                     </div>
                 </div>
                 <Avatar className='profile-img' style={{color:'black', border:'0px',}} size={140} src={katie}></Avatar>

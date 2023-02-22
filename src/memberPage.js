@@ -82,7 +82,7 @@ export default function MemberPage() {
     const navigate = useNavigate();
     const {state} = useLocation();
     const { member } = state;
-    const [bttn, setbttn] = useState(<><LinkOutlined/>Add Buddy</>);
+    const [bttn, setbttn] = useState(<><LinkOutlined/> Add Connection</>);
     const [clr, setclr] = useState('rgb(82,54,171)');
 
     return (
