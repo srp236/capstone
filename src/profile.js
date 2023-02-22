@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import {LinkOutlined} from '@ant-design/icons';
-import { Avatar, Row,Col, Button } from 'antd';
+import { Avatar, Row,Col, Button, Switch } from 'antd';
 import React from 'react';
 import './home.css';
 import katie from './katie.png';
@@ -62,6 +62,10 @@ const ProfileList2 = () => {
         {
             title:'Location',
             text:'Warren, NJ'
+        },
+        {
+            title:'Profile Status',
+            text:<Switch/>
         },
     ]
     return (

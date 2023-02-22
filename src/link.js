@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, Avatar } from 'antd';
 import React from 'react';
 import './home.css';
+import rachel from './rachel.png';
 
 const { Meta } = Card;
 
@@ -89,6 +90,18 @@ const CardList = () => {
     )
   }
 
+const Rachel =  {
+  name:'Rachel Smith',
+  email:'linkedin.com/rachel',
+  interests:['Travel','Food'],
+  nameIL:'RS',
+  role:'Business Analyst',
+  office:'Pittsburgh, PA',
+  links:'276',
+  social:'',
+  color:'rgb(230,26,57)'
+};
+
 export default function Link() {
     const navigate = useNavigate();
 
@@ -97,10 +110,28 @@ export default function Link() {
         <div className='homeBody grey-background'>
         <LeftOutlined className='back-bttn' style={{fontSize:'20px', padding:'10px 15px'}} onClick={()=>navigate('/profile')}/>
         <div className='head' style={{marginTop:'0px'}}>
-          <h1 style={{color:'#5236AB', fontWeight:"lighter", fontSize:"xx-large", marginTop:'20px'}}>Link Up!</h1>
+          <h1 style={{color:'#5236AB', fontWeight:"lighter", fontSize:"xx-large", marginTop:'20px'}}>Your Connections</h1>
           <h3 style={{fontSize:"large", fontWeight:"500", paddingBottom:'20px'}}>Select & Connect.</h3>
         </div>
         <div className='content'>
+        <Card className='memberCards' onClick={()=>navigate('/memberPage', {state:{member: Rachel, role:'Business Analyst'}})}>
+          <Meta title={<><h2 className='memberName'>Rachel Smith</h2>{}<StarFilled style={{position:'absolute',right:'10px', top:'10px', color:'grey'}}></StarFilled></>}
+          avatar={
+            <Avatar className='nameAvatar' style={{border:"5px solid white", fontSize:"50px", fontWeight:"light"}} src={rachel} size={150}><p></p></Avatar>
+          }
+          description={
+            <div className='cardDesc'>
+              <a><LinkedinFilled className='linkIcon'/>linkedin.com/rachel</a>
+              <h3>Common Interests</h3>
+              <ul>
+                <li>Travel</li>
+                <li>Food</li>
+              </ul>
+            </div>
+          }></Meta>
+        </Card>
+          <h1 style={{color:'#5236AB', fontWeight:"lighter", fontSize:"xx-large", marginTop:'10px', marginBottom:'20px'}}>Suggested Connections</h1>
+
           <CardList/>
         </div>
           <div className='space'/>
