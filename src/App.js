@@ -57,7 +57,7 @@ const BottomNavBar = () => {
 
 export default () => {
   return (
-    <Router initialEntries={['/link']}>
+    <Router initialEntries={['/profile']}>
       <div className="app">
         <div className='top'>
           <Image height={50}  style={{paddingTop:"10px"}} src={logo}></Image>
