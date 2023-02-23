@@ -46,7 +46,7 @@ const BottomNavBar = () => {
   return (
     <TabBar activeKey={pathname} onChange={value => setRouteActive(value)}>
       {tabs.map(item => (
-        <TabBar.Item
+        <TabBar.Item style={{'--adm-color-primary':'rgb(82,54,171)'}}
           key={item.key}
           icon={item.icon}
         />
