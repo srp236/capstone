@@ -9,7 +9,7 @@ const ProfileList1 = () => {
     const info = [
         {
             title:'Role',
-            text:'Business Analyst'
+            text:'Business Analyst yasss'
         },
         {
             title:'Office',
