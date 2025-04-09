@@ -4,7 +4,7 @@ import { Avatar, Row,Col, Button, Switch } from 'antd';
 import React from 'react';
 import './home.css';
 import katie from './katie.png';
-
+//this is a test
 const ProfileList1 = () => {
     const info = [
         {
