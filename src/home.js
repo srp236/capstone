@@ -5,7 +5,7 @@ import './home.css';
 const CardList = () => {
     const info = [
       {
-        heading:'CGI ACADEMIA yasssss',
+        heading:'CGI ACADEMIA yasssss yup',
         title:'Launch Journey - Week 4 Day 3',
         subTitle:'Documentation & Requirements',
         option1:'Clear',
